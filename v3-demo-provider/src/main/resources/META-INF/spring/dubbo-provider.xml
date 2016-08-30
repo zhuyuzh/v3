@@ -8,14 +8,14 @@
 
     <dubbo:application name="demo-provider" owner="YU.ZHU" organization="upsoft"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2080"/>
 
 
-    <dubbo:service interface="com.upsoft.v3.demo.api.UserServise" ref="userService" protocol="dubbo" />
+    <dubbo:service interface="com.upsoft.v3.demo.api.UserService" ref="userService" protocol="dubbo" />
 
     <dubbo:service interface="com.upsoft.v3.demo.api.UserRestService" ref="userRestService" protocol="rest"  validation="true"/>
 
-    <bean id="userService" class="com.upsoft.v3.demo.provider.UserServiseImpl"/>
+    <bean id="userService" class="com.upsoft.v3.demo.provider.UserServiceImpl"/>
 
     <bean id="userRestService" class="com.upsoft.v3.demo.provider.UserRestServiceImpl">
         <property name="userService" ref="userService"/>
